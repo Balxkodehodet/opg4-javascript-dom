@@ -67,9 +67,9 @@ function aiPlayerGame() {
 // End of aiPlayer function
 
 // Beginning of button clicks eventlisteners
-welcomeScreenbtn.addEventListener("click", () =>
-  welcomeScreen.classList.add("hidden")
-);
+welcomeScreenbtn.addEventListener("click", () => {
+  welcomeScreen.classList.add("hidden");
+});
 
 pcBtnFist.addEventListener("click", () => {
   showElement(pcFist, pcPaper, pcScissors);
