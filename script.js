@@ -17,13 +17,19 @@ switch (aiCombo[randomNrGen]) {
   case "fist-ai":
     console.log("Fist was chosen from AI");
     aiFist.classList.remove("hidden");
+    aiPaper.classList.add("hidden");
+    aiScissors.classList.add("hidden");
     break;
   case "paper-ai":
     console.log("Paper was chosen from AI");
     aiPaper.classList.remove("hidden");
+    aiFist.classList.add("hidden");
+    aiScissors.classList.add("hidden");
     break;
   case "scissors-ai":
     console.log("Scissors was chosen from AI");
     aiScissors.classList.remove("hidden");
+    aiFist.classList.add("hidden");
+    aiPaper.classList.add("hidden");
     break;
 }
