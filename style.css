@@ -20,8 +20,8 @@ body {
   height: 100%;
 }
 #ai-player img {
-  width: 5%;
-  height: 40%;
+  width: 10%;
+  height: 30%;
 }
 #gameboard {
   display: flex;
@@ -29,4 +29,21 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+#pc-player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#pc-player img {
+  width: 10%;
+  height: 30%;
+}
+button {
+  padding: 15px;
+  margin: 10px;
+  width: 7%;
+  height: auto;
 }

@@ -6,6 +6,11 @@ const aiPaper = document.getElementById("paper-ai");
 const aiFist = document.getElementById("fist-ai");
 const aiScissors = document.getElementById("scissors-ai");
 
+// Buttons of human player by ID
+const pcBtnFist = document.getElementById("btnFist");
+const pcBtnPaper = document.getElementById("btnPaper");
+const pcBtnScissors = document.getElementById("btnScissors");
+
 // Get each image element representing paper, scissors or fist by its ID by PC player
 const pcPaper = document.getElementById("paper-pc");
 const pcFist = document.getElementById("fist-pc");
@@ -43,4 +48,20 @@ switch (aiCombo[randomNrGen]) {
     aiFist.classList.add("hidden");
     aiPaper.classList.add("hidden");
     break;
+}
+
+pcBtnFist.addEventListener("click", () =>
+  showElement(pcFist, pcPaper, pcScissors)
+);
+pcBtnPaper.addEventListener("click", () =>
+  showElement(pcPaper, pcScissors, pcFist)
+);
+pcBtnScissors.addEventListener("click", () =>
+  showElement(pcScissors, pcFist, pcPaper)
+);
+
+function showElement(element, toRemove1, toRemove2) {
+  element.classList.remove("hidden");
+  toRemove1.classList.add("hidden");
+  toRemove2.classList.add("hidden");
 }
