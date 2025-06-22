@@ -16,49 +16,61 @@ const pcPaper = document.getElementById("paper-pc");
 const pcFist = document.getElementById("fist-pc");
 const pcScissors = document.getElementById("scissors-pc");
 
+// Get text elements in pc and AI respectively to add text content later
 const aiTxt = document.getElementById("aitext");
+const pcTxt = document.getElementById("pctext");
 
 // Store the paper fist and scissors ID names in an array
 const aiCombo = ["fist-ai", "paper-ai", "scissors-ai"];
 
-// Random number between 0 and 2
-let randomNrGen = Math.floor(Math.random() * aiCombo.length);
+// Beginning of aiPlayer function
+function aiPlayerGame() {
+  // Random number between 0 and 2
+  let randomNrGen = Math.floor(Math.random() * aiCombo.length);
 
-console.log(randomNrGen);
+  console.log(randomNrGen);
 
-switch (aiCombo[randomNrGen]) {
-  case "fist-ai":
-    console.log("Fist was chosen from AI");
-    aiTxt.textContent = "Fist was chosen from AI";
-    aiFist.classList.remove("hidden");
-    aiPaper.classList.add("hidden");
-    aiScissors.classList.add("hidden");
-    break;
-  case "paper-ai":
-    console.log("Paper was chosen from AI");
-    aiTxt.textContent = "Paper was chosen from AI";
-    aiPaper.classList.remove("hidden");
-    aiFist.classList.add("hidden");
-    aiScissors.classList.add("hidden");
-    break;
-  case "scissors-ai":
-    console.log("Scissors was chosen from AI");
-    aiTxt.textContent = "Scissors was chosen from AI";
-    aiScissors.classList.remove("hidden");
-    aiFist.classList.add("hidden");
-    aiPaper.classList.add("hidden");
-    break;
+  switch (aiCombo[randomNrGen]) {
+    case "fist-ai":
+      console.log("Fist was chosen from AI");
+      aiTxt.textContent = "Fist was chosen from AI";
+      aiFist.classList.remove("hidden");
+      aiPaper.classList.add("hidden");
+      aiScissors.classList.add("hidden");
+      break;
+    case "paper-ai":
+      console.log("Paper was chosen from AI");
+      aiTxt.textContent = "Paper was chosen from AI";
+      aiPaper.classList.remove("hidden");
+      aiFist.classList.add("hidden");
+      aiScissors.classList.add("hidden");
+      break;
+    case "scissors-ai":
+      console.log("Scissors was chosen from AI");
+      aiTxt.textContent = "Scissors was chosen from AI";
+      aiScissors.classList.remove("hidden");
+      aiFist.classList.add("hidden");
+      aiPaper.classList.add("hidden");
+      break;
+  }
 }
+// End of aiPlayer function
 
-pcBtnFist.addEventListener("click", () =>
-  showElement(pcFist, pcPaper, pcScissors)
-);
-pcBtnPaper.addEventListener("click", () =>
-  showElement(pcPaper, pcScissors, pcFist)
-);
-pcBtnScissors.addEventListener("click", () =>
-  showElement(pcScissors, pcFist, pcPaper)
-);
+pcBtnFist.addEventListener("click", () => {
+  pcTxt.textContent = "You chose Fist";
+  showElement(pcFist, pcPaper, pcScissors);
+  aiPlayerGame();
+});
+pcBtnPaper.addEventListener("click", () => {
+  pcTxt.textContent = "You chose paper";
+  showElement(pcPaper, pcScissors, pcFist);
+  aiPlayerGame();
+});
+pcBtnScissors.addEventListener("click", () => {
+  pcTxt.textContent = "You chose Scissors";
+  showElement(pcScissors, pcFist, pcPaper);
+  aiPlayerGame();
+});
 
 function showElement(element, toRemove1, toRemove2) {
   element.classList.remove("hidden");
