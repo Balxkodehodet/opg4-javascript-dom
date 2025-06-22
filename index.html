@@ -8,6 +8,7 @@
     <title>Dom manipulation</title>
   </head>
   <body>
+    <!-- En enkel velkomst seksjon grafisk -->
     <section id="welcomescreen">
       <h1>Welcome to rock,paper and scissors!</h1>
       <button id="btnWelcome"><p>Start Game</p></button>
@@ -19,21 +20,54 @@
         <h2>AI-player:</h2>
         <br />
         <p id="aitext"></p>
-        <img class="hidden" id="fist-ai" src="./images/fist.png" />
-        <img class="hidden" id="paper-ai" src="./images/paper.png" />
-        <img class="hidden" id="scissors-ai" src="./images/scissor.png" />
+        <img
+          class="hidden"
+          id="fist-ai"
+          src="./images/fist.png"
+          alt="Image of a fist"
+        />
+        <img
+          class="hidden"
+          id="paper-ai"
+          src="./images/paper.png"
+          alt="Image of paper"
+        />
+        <img
+          class="hidden"
+          id="scissors-ai"
+          src="./images/scissor.png"
+          alt="Image of a scissor"
+        />
       </section>
       <!-- Section for pc player (human player) images and effects -->
       <section id="pc-player">
         <h2>Human player:</h2>
         <br />
+        <!-- pctext paragraph for å vise tekst angående menneske spilleren -->
         <p id="pctext"></p>
+        <!-- 3 knapper som representerer valgene du kan ta: Hånd, papir eller saks -->
         <button id="btnFist"><p>Fist</p></button><br />
         <button id="btnPaper"><p>Paper</p></button><br />
         <button id="btnScissors"><p>Scissors</p></button><br />
-        <img class="hidden" id="fist-pc" src="./images/fist.png" />
-        <img class="hidden" id="paper-pc" src="./images/paper.png" />
-        <img class="hidden" id="scissors-pc" src="./images/scissor.png" />
+        <!-- 3 bilder som representerer stein/hånd saks papir -->
+        <img
+          class="hidden"
+          id="fist-pc"
+          src="./images/fist.png"
+          alt="Image of a fist"
+        />
+        <img
+          class="hidden"
+          id="paper-pc"
+          src="./images/paper.png"
+          alt="Image of paper"
+        />
+        <img
+          class="hidden"
+          id="scissors-pc"
+          src="./images/scissor.png"
+          alt="Image of a scissor"
+        />
       </section>
     </section>
   </body>
