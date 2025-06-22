@@ -1,3 +1,8 @@
+// A rock paper and scissors game with visuals/images
+// You push the button of your choice either its rock paper or scissors,
+// And the computer chooses to challenge your choice..
+// See if you can win against the computer!
+
 // Fetch the player and ai section by ID
 const aiPlayer = document.getElementById("ai-player");
 const pcPlayer = document.getElementById("pc-player");
@@ -22,6 +27,10 @@ const pcTxt = document.getElementById("pctext");
 
 // Store the paper fist and scissors ID names in an array
 const aiCombo = ["fist-ai", "paper-ai", "scissors-ai"];
+
+// Get welcome screen button by ID and welcome screen by ID
+const welcomeScreenbtn = document.getElementById("btnWelcome");
+const welcomeScreen = document.getElementById("welcomescreen");
 
 // Beginning of aiPlayer function
 function aiPlayerGame() {
@@ -53,9 +62,14 @@ function aiPlayerGame() {
       aiPaper.classList.add("hidden");
       break;
   }
-  return randomNrGen; // Return the index nr of the choice taken
+  return randomNrGen; // Return the index nr of the choice taken so that it can be used in checking for who won or lost
 }
 // End of aiPlayer function
+
+// Beginning of button clicks eventlisteners
+welcomeScreenbtn.addEventListener("click", () =>
+  welcomeScreen.classList.add("hidden")
+);
 
 pcBtnFist.addEventListener("click", () => {
   showElement(pcFist, pcPaper, pcScissors);
@@ -112,4 +126,5 @@ function showElement(element, toRemove1, toRemove2) {
   toRemove2.classList.add("hidden");
 }
 
+// Just a check to see if the index number created by the random nr generator works by calling the function
 console.log("AiPLayerGame number index is: ", aiPlayerGame());
