@@ -24,6 +24,7 @@ body {
   background-color: blue;
   padding: 3em;
   flex-wrap: wrap;
+  color: white;
 }
 #welcomescreen button {
   max-width: 100%;
