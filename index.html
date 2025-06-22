@@ -8,16 +8,28 @@
     <title>Dom manipulation</title>
   </head>
   <body>
-    <section id="ai-player">
-      <h2>AI-player</h2>
-      <img class="hidden" id="fist-ai" src="./images/fist.png" />
-      <img class="hidden" id="paper-ai" src="./images/paper.png" />
-      <img class="hidden" id="scissors-ai" src="./images/scissor.png" />
-    </section>
-    <section id="pc-player">
-      <img class="hidden" id="fist-pc" src="./images/fist.png" />
-      <img class="hidden" id="paper-pc" src="./images/paper.png" />
-      <img class="hidden" id="scissors-pc" src="./images/scissor.png" />
+    <!-- Section for the entire gameboard -->
+    <section id="gameboard">
+      <!-- Section for AI player images and effects/actions -->
+      <section id="ai-player">
+        <h2>AI-player:</h2>
+        <br />
+        <p id="aitext"></p>
+        <img class="hidden" id="fist-ai" src="./images/fist.png" />
+        <img class="hidden" id="paper-ai" src="./images/paper.png" />
+        <img class="hidden" id="scissors-ai" src="./images/scissor.png" />
+      </section>
+      <!-- Section for pc player (human player) images and effects -->
+      <section id="pc-player">
+        <h2>Human player:</h2>
+        <br />
+        <button id="btnFist">Fist</button><br />
+        <button id="btnPaper">Paper</button><br />
+        <button id="btnScissors">Scissors</button><br />
+        <img class="hidden" id="fist-pc" src="./images/fist.png" />
+        <img class="hidden" id="paper-pc" src="./images/paper.png" />
+        <img class="hidden" id="scissors-pc" src="./images/scissor.png" />
+      </section>
     </section>
   </body>
 </html>

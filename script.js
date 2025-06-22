@@ -1,11 +1,19 @@
 // Fetch the player and ai section by ID
 const aiPlayer = document.getElementById("ai-player");
 const pcPlayer = document.getElementById("pc-player");
-// get each image element representing paper, scissors or fist by its ID
+// Get each image element representing paper, scissors or fist by its ID by AI
 const aiPaper = document.getElementById("paper-ai");
 const aiFist = document.getElementById("fist-ai");
 const aiScissors = document.getElementById("scissors-ai");
 
+// Get each image element representing paper, scissors or fist by its ID by PC player
+const pcPaper = document.getElementById("paper-pc");
+const pcFist = document.getElementById("fist-pc");
+const pcScissors = document.getElementById("scissors-pc");
+
+const aiTxt = document.getElementById("aitext");
+
+// Store the paper fist and scissors ID names in an array
 const aiCombo = ["fist-ai", "paper-ai", "scissors-ai"];
 
 // Random number between 0 and 2
@@ -16,18 +24,21 @@ console.log(randomNrGen);
 switch (aiCombo[randomNrGen]) {
   case "fist-ai":
     console.log("Fist was chosen from AI");
+    aiTxt.textContent = "Fist was chosen from AI";
     aiFist.classList.remove("hidden");
     aiPaper.classList.add("hidden");
     aiScissors.classList.add("hidden");
     break;
   case "paper-ai":
     console.log("Paper was chosen from AI");
+    aiTxt.textContent = "Paper was chosen from AI";
     aiPaper.classList.remove("hidden");
     aiFist.classList.add("hidden");
     aiScissors.classList.add("hidden");
     break;
   case "scissors-ai":
     console.log("Scissors was chosen from AI");
+    aiTxt.textContent = "Scissors was chosen from AI";
     aiScissors.classList.remove("hidden");
     aiFist.classList.add("hidden");
     aiPaper.classList.add("hidden");

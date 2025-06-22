@@ -6,8 +6,11 @@
   display: none;
 }
 body {
+  display: flex;
+  flex-direction: column;
   width: 100svw;
   height: 100svh;
+  overflow: hidden;
 }
 #ai-player {
   display: flex;
@@ -17,6 +20,13 @@ body {
   height: 100%;
 }
 #ai-player img {
-  min-width: 10%;
-  min-height: 10%;
+  width: 5%;
+  height: 40%;
+}
+#gameboard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
