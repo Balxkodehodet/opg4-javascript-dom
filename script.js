@@ -29,7 +29,7 @@ function aiPlayerGame() {
   let randomNrGen = Math.floor(Math.random() * aiCombo.length);
 
   console.log(randomNrGen);
-
+  // Switch case to determine randomly if a fist, scissor or paper was chosen by the AI
   switch (aiCombo[randomNrGen]) {
     case "fist-ai":
       console.log("Fist was chosen from AI");
@@ -53,23 +53,57 @@ function aiPlayerGame() {
       aiPaper.classList.add("hidden");
       break;
   }
+  return randomNrGen; // Return the index nr of the choice taken
 }
 // End of aiPlayer function
 
 pcBtnFist.addEventListener("click", () => {
-  pcTxt.textContent = "You chose Fist";
   showElement(pcFist, pcPaper, pcScissors);
-  aiPlayerGame();
+  const resultOfGame = aiPlayerGame();
+  // AI choosing 0 = fist , 1 = paper, 2 = scissors
+  switch (resultOfGame) {
+    case 0:
+      pcTxt.textContent = "You chose Fist, its a tie";
+      break;
+    case 1:
+      pcTxt.textContent = "You chose Fist, Ai chose paper, you lost";
+      break;
+    case 2:
+      pcTxt.textContent = "You chose Fist, AI chose scissors, you won!";
+      break;
+  }
 });
 pcBtnPaper.addEventListener("click", () => {
-  pcTxt.textContent = "You chose paper";
   showElement(pcPaper, pcScissors, pcFist);
-  aiPlayerGame();
+  const resultOfGame = aiPlayerGame();
+  // AI choosing 0 = fist , 1 = paper, 2 = scissors
+  switch (resultOfGame) {
+    case 0:
+      pcTxt.textContent = "You chose Paper, AI chose fist, you won!";
+      break;
+    case 1:
+      pcTxt.textContent = "You chose Paper, Ai chose paper, its a tie";
+      break;
+    case 2:
+      pcTxt.textContent = "You chose Paper, AI chose scissors, you Lost!";
+      break;
+  }
 });
 pcBtnScissors.addEventListener("click", () => {
-  pcTxt.textContent = "You chose Scissors";
   showElement(pcScissors, pcFist, pcPaper);
-  aiPlayerGame();
+  const resultOfGame = aiPlayerGame();
+  // AI choosing 0 = fist , 1 = paper, 2 = scissors
+  switch (resultOfGame) {
+    case 0:
+      pcTxt.textContent = "You chose Scissors, AI chose fist, you lost!";
+      break;
+    case 1:
+      pcTxt.textContent = "You chose Scissors, Ai chose paper, You won!";
+      break;
+    case 2:
+      pcTxt.textContent = "You chose Scissors, AI chose scissors, Its a tie!";
+      break;
+  }
 });
 
 function showElement(element, toRemove1, toRemove2) {
@@ -77,3 +111,5 @@ function showElement(element, toRemove1, toRemove2) {
   toRemove1.classList.add("hidden");
   toRemove2.classList.add("hidden");
 }
+
+console.log("AiPLayerGame number index is: ", aiPlayerGame());
